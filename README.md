@@ -1,3 +1,5 @@
-# hitszhkr1
+This is a readme file
 
-//This is a test file, you can use this to see whether you have cloned successfully.
+We are sorry to say that the project is not yet began to develop.
+
+According to the time arrangement,development will begin before 2021.6
