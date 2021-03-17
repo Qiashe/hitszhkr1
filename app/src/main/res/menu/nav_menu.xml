@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/ic_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="设置">
+        </item>
+
+        <item
+            android:id="@+id/ic_help"
+            android:icon="@drawable/ic_help"
+            android:title="帮助">
+        </item>
+
+        <item
+            android:id="@+id/ic_contact"
+            android:icon="@drawable/ic_contact"
+            android:title="联系我们">
+        </item>
+
+        <item
+            android:id="@+id/ic_about"
+            android:icon="@drawable/ic_about"
+            android:title="关于软件">
+        </item>
+
+    </group>
+</menu>
