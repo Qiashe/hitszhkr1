@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".drawerActivities.AboutActivity"></activity>
+        <activity android:name=".drawerActivities.ContactActivity" />
+        <activity android:name=".drawerActivities.HelpActivity" />
+        <activity android:name=".drawerActivities.SettingsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

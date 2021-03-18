@@ -33,7 +33,10 @@
         android:layout_gravity="start"
         app:theme="@style/NavigationViewText"
         app:menu="@menu/nav_menu"
-        app:headerLayout="@layout/nav_header">
+        app:headerLayout="@layout/nav_header"
+        app:itemHorizontalPadding="30dp"
+        app:itemTextColor="#bb33ff"
+        >
     </com.google.android.material.navigation.NavigationView>
 
 
