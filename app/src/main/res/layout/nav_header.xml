@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="350dp"
-    android:background="@drawable/titleimg02">
-    
-</RelativeLayout>
+    android:background="#00bafe">
+
+    <TextView
+        android:layout_gravity="bottom|left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="25dp"
+        android:text="校园生活管家"
+        android:textColor="#fff"
+        android:textSize="35dp">
+    </TextView>
+
+</FrameLayout>

@@ -3,8 +3,10 @@ package com.example.hitszhkr1
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import com.example.hitszhkr1.drawerActivities.AboutActivity
 import com.example.hitszhkr1.drawerActivities.ContactActivity
 import com.example.hitszhkr1.drawerActivities.HelpActivity
@@ -18,6 +20,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //mainNavigation.setCheckedItem(R.id.ic_settings)
+        button_draw_out.setBackgroundColor(Color.TRANSPARENT)
+        nightmode_button.setBackgroundColor(Color.TRANSPARENT)
+        scan_button.setBackgroundColor(Color.TRANSPARENT)
+        button_draw_out.setOnClickListener {
+            mainDrawerLayout.openDrawer(GravityCompat.START)
+        }
+
+        bottom_1.setOnNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.canteen -> {
+                    val intent=Intent(this,CanteenActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> {
+                    true
+                }
+            }
+        }
+
+        //侧滑栏的点击事件处理
         mainNavigation.setNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.ic_settings -> {

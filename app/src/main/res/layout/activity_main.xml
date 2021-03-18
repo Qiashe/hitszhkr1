@@ -5,39 +5,144 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainDrawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipToPadding="true"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:id="@+id/container1"
-        android:layout_width="match_parent"
+    <FrameLayout
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="match_parent">
 
-        <TextView
+
+<!--        地图控件待解决-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/map_example"
+            android:scaleType="centerCrop">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            android:fitsSystemWindows="true">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="#ffffff">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/button_draw_out"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_index">
+                    </ImageButton>
+
+                    <SearchView
+                        android:id="@+id/search1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="9"
+                        android:autofillHints="点此搜索"
+                        android:queryHint="搜索设施名称或标签">
+                    </SearchView>
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:clipToPadding="true"
+            android:fitsSystemWindows="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NULL">
-        </TextView>
+            android:orientation="vertical"
+            android:layout_gravity="bottom">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="校园生活管家 开发版本"/>
 
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/mainNavigation"
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_1"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                app:menu="@menu/nav_bottom_menu">
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:theme="@style/NavigationViewText"
-        app:menu="@menu/nav_menu"
-        app:headerLayout="@layout/nav_header"
-        app:itemHorizontalPadding="30dp"
-        app:itemTextColor="#bb33ff"
-        >
-    </com.google.android.material.navigation.NavigationView>
+        android:layout_gravity="start">
 
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/mainNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:theme="@style/NavigationViewText"
+            app:menu="@menu/nav_menu"
+            app:headerLayout="@layout/nav_header"
+            app:itemHorizontalPadding="30dp"
+            app:itemTextColor="#444"
+            >
+        </com.google.android.material.navigation.NavigationView>
+
+        <View
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#eee"
+            android:layout_marginBottom="55dp">
+        </View>
+
+        <FrameLayout
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageButton
+                android:id="@+id/nightmode_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left"
+                android:src="@drawable/ic_nightmode"
+                android:layout_marginLeft="20dp"
+                android:scaleType="centerCrop">
+            </ImageButton>
+            <ImageButton
+                android:id="@+id/scan_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_scan"
+                android:layout_marginRight="20dp"
+                android:scaleType="centerCrop">
+            </ImageButton>
+
+
+        </FrameLayout>
+
+    </FrameLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
