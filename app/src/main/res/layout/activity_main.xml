@@ -29,10 +29,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:background="#ffffff">
+                android:background="@color/colorPrimaryDark">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -52,8 +49,8 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="9"
-                        android:autofillHints="点此搜索"
-                        android:queryHint="搜索设施名称或标签">
+                        android:queryHint="因为我对这土地爱得深沉"
+                        app:queryHint="因为我对这土地爱得深沉">
                     </SearchView>
 
                 </LinearLayout>
@@ -81,9 +78,6 @@
                 android:id="@+id/bottom_1"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="25dp"
                 app:menu="@menu/nav_bottom_menu">
             </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -104,7 +98,7 @@
             app:menu="@menu/nav_menu"
             app:headerLayout="@layout/nav_header"
             app:itemHorizontalPadding="30dp"
-            app:itemTextColor="#444"
+            app:itemTextColor="#00bafe"
             >
         </com.google.android.material.navigation.NavigationView>
 

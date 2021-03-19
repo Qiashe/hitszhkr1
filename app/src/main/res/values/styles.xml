@@ -5,9 +5,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="NavigationViewText">
@@ -17,12 +16,12 @@
     </style>
 
     <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
-<!--    <style name="NotFullScreen" parent="Theme.AppCompat.Dialog">-->
-<!--        <item name="android:windowBackground">@drawable/platformbackground</item>-->
-<!--    </style>-->
+    <style name="TransluctNavigationTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 
 </resources>

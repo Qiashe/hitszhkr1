@@ -2,18 +2,26 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="350dp"
-    android:background="#00bafe">
+    android:layout_height="100dp"
+    android:background="#fff">
 
     <TextView
         android:layout_gravity="bottom|left"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="15dp"
         android:text="校园生活管家"
-        android:textColor="#fff"
+        android:textColor="#00bafe"
         android:textSize="35dp">
     </TextView>
+
+    <View
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#eee">
+    </View>
+
 
 </FrameLayout>

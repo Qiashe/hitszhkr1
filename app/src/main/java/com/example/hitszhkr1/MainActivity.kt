@@ -69,4 +69,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onStart() {
+        bottom_1.selectedItemId=R.id.homepage
+        super.onStart()
+    }
+
 }
