@@ -42,12 +42,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+<!--                    设置项一:获取软件更新-->
                     <FrameLayout
                         android:id="@+id/settingItem1"
                         android:layout_width="match_parent"
                         android:layout_marginHorizontal="10dp"
                         android:layout_height="80dp">
 
+                        <Button
+                            android:id="@+id/update_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:id="@+id/text_setting_update_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:layout_marginStart="20dp"
+                            android:textSize="20sp"/>
+
+                        <TextView
+                            android:id="@+id/text_setting_update_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginEnd="20dp"
+                            android:textSize="18sp"/>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="3dp"
@@ -55,19 +76,74 @@
                             android:background="#eee"/>
                     </FrameLayout>
 
-
+                    <!--设置项二:反馈BUG-->
                     <FrameLayout
                         android:id="@+id/settingItem2"
                         android:layout_width="match_parent"
                         android:layout_marginHorizontal="10dp"
                         android:layout_height="80dp">
 
+                        <Button
+                            android:id="@+id/bg_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:id="@+id/text_bg_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:layout_marginStart="20dp"
+                            android:textSize="20sp"/>
+
+                        <TextView
+                            android:id="@+id/text_bg_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginEnd="20dp"
+                            android:textSize="18sp"/>
+
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="3dp"
                             android:layout_gravity="bottom"
                             android:background="#eee"/>
                     </FrameLayout>
+
+                    <!--设置项三:清除软件缓存-->
+                    <FrameLayout
+                        android:id="@+id/settingItem3"
+                        android:layout_width="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_height="80dp">
+
+                        <Button
+                            android:id="@+id/clear_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:id="@+id/text_clear_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left|center"
+                            android:layout_marginStart="20dp"
+                            android:textSize="20sp"/>
+
+                        <TextView
+                            android:id="@+id/text_clear_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center"
+                            android:layout_marginEnd="20dp"
+                            android:textSize="18sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_gravity="bottom"
+                            android:background="#eee"/>
+                    </FrameLayout>
+
 
 
                 </LinearLayout>

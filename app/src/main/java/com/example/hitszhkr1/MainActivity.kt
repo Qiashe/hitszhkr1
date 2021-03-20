@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         button_draw_out.setBackgroundColor(Color.TRANSPARENT)
         nightmode_button.setBackgroundColor(Color.TRANSPARENT)
         scan_button.setBackgroundColor(Color.TRANSPARENT)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         button_draw_out.setOnClickListener {
             mainDrawerLayout.openDrawer(GravityCompat.START)
         }

@@ -8,31 +8,51 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.example.hitszhkr1.database.DatabaseHelper
 import kotlinx.android.synthetic.main.activity_canteen_item.*
 
 class CanteenItemActivity : AppCompatActivity() {
     @SuppressLint("ResourceType")
+    private val createIndex="create table Canteen ("+
+            "id integer primary key autoincrement," +
+            "name text," +
+            "mark integer," +
+            "spice integer," +
+            "location text," +
+            "canteenNum integer," +
+            "about text)"
+    private val dbVersion=1
+    private val dbHelper= DatabaseHelper(this,"canteen.db",createIndex,dbVersion)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_canteen_item)
-        val itemName="甜甜花酿鸡"
-        val itemAbout="星级\n" +
-                "★★\n" +
-                "食谱获取\n" +
-                "任务获得\n" +
-                "配方材料\n" +
-                "禽肉*2、甜甜花*4\n" +
-                "使用效果\n" +
-                "为选中的角色恢复生命值上限的24% ，并额外恢复1600点生命值\n" +
-                "获取方式\n" +
-                "完美烹饪甜甜花酿鸡"
+        val idGet=intent.getIntExtra("ID",0) //接受ID
+//        Toast.makeText(this, "IDis$id", Toast.LENGTH_SHORT).show()
+        val db=dbHelper.writableDatabase
+        var itemName="Default"
+        var itemAbout="Default"
+
+        val cursor = db.query("Canteen",null,null,null,null,null,null)
+        if (cursor.moveToFirst()) {
+            do {
+                val id=cursor.getInt(cursor.getColumnIndex("id"))
+                if (id == idGet){
+                    itemName=cursor.getString(cursor.getColumnIndex("name"))
+                    itemAbout=cursor.getString(cursor.getColumnIndex("about"))
+                }
+            }while (cursor.moveToNext())
+        }
+        cursor.close()
+
         val itemTitle= "关于$itemName"
         val itemPrice= 9.99
         val reviewNumber= 120
         val reviewText="$reviewNumber 评价"
         val label1="辛辣"
-        val label2="荔园食堂"
+        val label2="梨园"
         val pictureTitle="$itemName 的图片"
         button_see_more.setBackgroundColor(Color.TRANSPARENT)
         setSupportActionBar(toolbar_item)
