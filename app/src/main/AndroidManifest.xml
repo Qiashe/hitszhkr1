@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CanteenItemActivity"
-            android:theme="@style/TransluctNavigationTheme"/>
-        <activity android:name=".CanteenActivity"/>
+        <activity android:name=".drawerActivities.SettingActivity"></activity>
+        <activity
+            android:name=".CanteenItemActivity"
+            android:theme="@style/TransluctNavigationTheme" />
+        <activity android:name=".CanteenActivity" />
         <activity android:name=".drawerActivities.AboutActivity" />
         <activity android:name=".drawerActivities.ContactActivity" />
         <activity android:name=".drawerActivities.HelpActivity" />

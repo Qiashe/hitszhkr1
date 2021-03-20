@@ -7,10 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import com.example.hitszhkr1.drawerActivities.AboutActivity
-import com.example.hitszhkr1.drawerActivities.ContactActivity
-import com.example.hitszhkr1.drawerActivities.HelpActivity
-import com.example.hitszhkr1.drawerActivities.SettingsActivity
+import com.example.hitszhkr1.drawerActivities.*
 import com.google.android.material.internal.NavigationMenuItemView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -44,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         mainNavigation.setNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.ic_settings -> {
-                    val intent=Intent(this, SettingsActivity::class.java)
+                    val intent=Intent(this, SettingActivity::class.java)
                     startActivity(intent)
                     true
                 }
