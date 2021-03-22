@@ -11,12 +11,13 @@ class DatabaseHelper(val context: Context, name: String, createIndex: String, ve
     private val create=createIndex
 
     override fun onCreate(db: SQLiteDatabase) {
+        Toast.makeText(context, "trying create $create", Toast.LENGTH_SHORT).show()
         db.execSQL(create)
         Toast.makeText(context, "CREATE$create", Toast.LENGTH_SHORT).show()
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        Toast.makeText(context, "trying update $create", Toast.LENGTH_SHORT).show()
     }
-
 
 }

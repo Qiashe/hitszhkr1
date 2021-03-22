@@ -1,5 +1,7 @@
 package com.example.hitszhkr1.drawerActivities
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_about.*
 import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
@@ -57,6 +60,15 @@ class SettingActivity : AppCompatActivity() {
             //删除数据库数据
         }
 
+        //第四个组件，开发者模式
+        text_dev_title.text="Developer Mode"
+        text_dev_hint.text=" "
+        dev_button.setBackgroundColor(Color.TRANSPARENT)
+        dev_button.setOnClickListener {
+            Toast.makeText(this, "opening", Toast.LENGTH_SHORT).show()
+            val intent=Intent(this,DeveloperModeActivity::class.java)
+            startActivity(intent)
+        }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){

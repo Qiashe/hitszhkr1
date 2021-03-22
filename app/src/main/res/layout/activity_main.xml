@@ -72,6 +72,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:text="校园生活管家 开发版本"/>
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="本界面功能开发中！！！！！"/>
 
 
             <com.google.android.material.bottomnavigation.BottomNavigationView

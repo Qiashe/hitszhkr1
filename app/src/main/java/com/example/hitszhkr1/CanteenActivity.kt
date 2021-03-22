@@ -21,6 +21,9 @@ class CanteenActivity : AppCompatActivity() {
             "spice integer," +
             "location text," +
             "canteenNum integer," +
+            "reviewNum integer," +
+            "imageID integer," +
+            "price real," +
             "about text)"
     private val dbVersion=1
     private val dbHelper=DatabaseHelper(this,"canteen.db",createIndex,dbVersion)
@@ -57,7 +60,6 @@ class CanteenActivity : AppCompatActivity() {
         val adapter=canteenItemAdapter(this,itemList)
         recycler_canteen.adapter=adapter
 
-
     }
 
     private fun initList(){ //初始化卡片列表
@@ -66,62 +68,21 @@ class CanteenActivity : AppCompatActivity() {
         if (cursor.moveToFirst()) {
             do {
                 val name=cursor.getString(cursor.getColumnIndex("name"))
+                val iid=cursor.getInt(cursor.getColumnIndex("imageID"))
                 val id=cursor.getInt(cursor.getColumnIndex("id"))
-                val item = CanteenItem(name,id,id)
+                val item = CanteenItem(name,iid,id)
                 itemList.add(item)
             }while (cursor.moveToNext())
         }
         cursor.close()
-//        val i=1
-//        val item = CanteenItem("小饼干！",R.drawable.test1,1)
-//        repeat(50){
-//            itemList.add(item)
-//        }
     }
 
     private fun createCanteenBook(){ //数据库创建
         Toast.makeText(this, "trying", Toast.LENGTH_SHORT).show()
             dbHelper.writableDatabase
+        Toast.makeText(this, "tried", Toast.LENGTH_SHORT).show()
+
     }
 
-    private fun addToCanteenBook(){ //填充数据库中的数据（临时）
-        val db=dbHelper.writableDatabase
-        val value1 = ContentValues().apply {
-            put("about","TEST1,TEST1,TEST1")
-            put("canteenNum",1)
-            put("location","梨园")
-            put("mark",0)
-            put("name","阿巴阿巴")
-            put("spice",0)
-        }
-        db.insert("Canteen",null,value1)
-        val value2 = ContentValues().apply {
-            put("about","TEST2,TEST2,TEST2")
-            put("canteenNum",1)
-            put("location","梨园")
-            put("mark",0)
-            put("name","114514!!!")
-            put("spice",1)
-        }
-        db.insert("Canteen",null,value2)
-        val value3 = ContentValues().apply {
-            put("about","TEST1,TEST1,TEST1")
-            put("canteenNum",1)
-            put("location","和园")
-            put("mark",0)
-            put("name","哼哼，啊啊啊啊啊啊啊！")
-            put("spice",1)
-        }
-        db.insert("Canteen",null,value3)
-        val value4 = ContentValues().apply {
-            put("about","TEST1,TEST1,TEST1")
-            put("canteenNum",4)
-            put("location","梨园")
-            put("mark",5)
-            put("name","甜甜花酿鸡")
-            put("spice",0)
-        }
-        db.insert("Canteen",null,value4)
-    }
 
 }

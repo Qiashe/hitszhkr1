@@ -2,12 +2,9 @@ package com.example.hitszhkr1
 
 import android.annotation.SuppressLint
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.hitszhkr1.database.DatabaseHelper
@@ -22,6 +19,9 @@ class CanteenItemActivity : AppCompatActivity() {
             "spice integer," +
             "location text," +
             "canteenNum integer," +
+            "reviewNum integer," +
+            "imageID integer," +
+            "price real," +
             "about text)"
     private val dbVersion=1
     private val dbHelper= DatabaseHelper(this,"canteen.db",createIndex,dbVersion)
@@ -30,30 +30,42 @@ class CanteenItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_canteen_item)
         val idGet=intent.getIntExtra("ID",0) //接受ID
-//        Toast.makeText(this, "IDis$id", Toast.LENGTH_SHORT).show()
+
+        val imageGet=intent.getIntExtra("ImageId",0) //Image ID Receiver
+        Toast.makeText(this, "ImageIDis$imageGet", Toast.LENGTH_SHORT).show()
         val db=dbHelper.writableDatabase
         var itemName="Default"
         var itemAbout="Default"
+        var label2="Default"
+        var canteenNum=0
+        var spice=0
+        var itemPrice= 0.00
+        var reviewNumber= 120
+        var itemMark=0
 
         val cursor = db.query("Canteen",null,null,null,null,null,null)
         if (cursor.moveToFirst()) {
             do {
                 val id=cursor.getInt(cursor.getColumnIndex("id"))
                 if (id == idGet){
-                    itemName=cursor.getString(cursor.getColumnIndex("name"))
                     itemAbout=cursor.getString(cursor.getColumnIndex("about"))
+                    itemName=cursor.getString(cursor.getColumnIndex("name"))
+                    label2=cursor.getString(cursor.getColumnIndex("location"))
+                    itemPrice=cursor.getDouble(cursor.getColumnIndex("price"))
+                    reviewNumber=cursor.getInt(cursor.getColumnIndex("reviewNum"))
+                    canteenNum=cursor.getInt(cursor.getColumnIndex("canteenNum"))
+                    itemMark=cursor.getInt(cursor.getColumnIndex("mark"))
+                    spice=cursor.getInt(cursor.getColumnIndex("spice"))
                 }
             }while (cursor.moveToNext())
         }
         cursor.close()
 
-        val itemTitle= "关于$itemName"
-        val itemPrice= 9.99
-        val reviewNumber= 120
-        val reviewText="$reviewNumber 评价"
-        val label1="辛辣"
-        val label2="梨园"
-        val pictureTitle="$itemName 的图片"
+        val itemTitle= "关于$itemName"        //勿动
+        val reviewText="$reviewNumber 评价"   //勿动
+        val label1="辛辣"                     //勿动
+        val pictureTitle="$itemName 的图片"   //勿动
+
         button_see_more.setBackgroundColor(Color.TRANSPARENT)
         setSupportActionBar(toolbar_item)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -66,16 +78,38 @@ class CanteenItemActivity : AppCompatActivity() {
         item_about_text.text=itemAbout
         price_of_item.text="$itemPrice"
         picture_about_title.text=pictureTitle
-        Glide.with(this).load(R.drawable.tempstar1).into(star_mark)
-        Glide.with(this).load(R.drawable.chicken).into(image_item)
-        Glide.with(this).load(R.drawable.no).into(label_icon1)
-        Glide.with(this).load(R.drawable.liyuan1).into(label_icon2)
-        Glide.with(this).load(R.drawable.chicken).into(picture_about1)
-        Glide.with(this).load(R.drawable.chicken).into(picture_about2)
-        Glide.with(this).load(R.drawable.chicken).into(picture_about3)
-        Glide.with(this).load(R.drawable.chicken).into(picture_about4)
-        Glide.with(this).load(R.drawable.chicken).into(picture_about5)
-        Glide.with(this).load(R.drawable.chicken).into(picture_about6)
+
+        when(spice){    //是否辛辣——icon加载
+            0 -> Glide.with(this).load(R.drawable.ic_spice_no).into(label_icon1)
+            else -> Glide.with(this).load(R.drawable.ic_spice_yes).into(label_icon1)
+        }
+
+        when(canteenNum){   //食堂号——icon加载
+            0 -> Glide.with(this).load(R.drawable.ic_question).into(label_icon2)
+            1 -> Glide.with(this).load(R.drawable.ic_num_1).into(label_icon2)
+            2 -> Glide.with(this).load(R.drawable.ic_num_2).into(label_icon2)
+            3 -> Glide.with(this).load(R.drawable.ic_num_3).into(label_icon2)
+            4 -> Glide.with(this).load(R.drawable.ic_num_4).into(label_icon2)
+            else -> Glide.with(this).load(R.drawable.ic_question).into(label_icon2)
+        }
+
+        when(itemMark){     //评分——icon加载
+            0 -> Glide.with(this).load(R.drawable.ic_question).into(star_mark)
+            1 -> Glide.with(this).load(R.drawable.ic_star_1).into(star_mark)
+            2 -> Glide.with(this).load(R.drawable.ic_star_2).into(star_mark)
+            3 -> Glide.with(this).load(R.drawable.ic_star_3).into(star_mark)
+            4 -> Glide.with(this).load(R.drawable.ic_star_4).into(star_mark)
+            5 -> Glide.with(this).load(R.drawable.ic_star_5).into(star_mark)
+            else -> Glide.with(this).load(R.drawable.ic_question).into(star_mark)
+        }
+
+        Glide.with(this).load(imageGet).into(image_item)
+        Glide.with(this).load(imageGet).into(picture_about1)
+        Glide.with(this).load(R.drawable.no_image).into(picture_about2)
+        Glide.with(this).load(R.drawable.no_image).into(picture_about3)
+        Glide.with(this).load(R.drawable.no_image).into(picture_about4)
+        Glide.with(this).load(R.drawable.no_image).into(picture_about5)
+        Glide.with(this).load(R.drawable.no_image).into(picture_about6)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

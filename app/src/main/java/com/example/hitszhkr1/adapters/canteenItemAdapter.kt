@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.hitszhkr1.CanteenActivity
@@ -27,8 +28,10 @@ class canteenItemAdapter(private val context: Context, private val item_list : L
         holder.itemView.setOnClickListener {
             val position=holder.adapterPosition
             val item=item_list[position]
+            Toast.makeText(context, "point", Toast.LENGTH_SHORT).show()
             val intent=Intent(context,CanteenItemActivity::class.java).apply {
                 putExtra("ID",item.ID)
+                putExtra("ImageId",item.imageID)
             }
             context.startActivity(intent)
         }
@@ -38,6 +41,7 @@ class canteenItemAdapter(private val context: Context, private val item_list : L
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val canteenItem = item_list[position]
         holder.nameCanteen.text = canteenItem.name
+//        holder.imageCanteen.setImageResource(canteenItem.ID)
         Glide.with(context).load(canteenItem.imageID).into(holder.imageCanteen)
     }
 

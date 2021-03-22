@@ -76,12 +76,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/price_icon"
-                        android:layout_width="45sp"
-                        android:layout_height="45sp"
-                        android:src="@drawable/ic_price">
-                    </ImageView>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/price_icon"
+                            android:layout_width="40sp"
+                            android:layout_height="40sp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_price">
+                        </ImageView>
+
+                    </FrameLayout>
+
 
                     <TextView
                         android:id="@+id/price_of_item"
@@ -117,8 +125,8 @@
                             android:id="@+id/star_mark"
                             android:layout_gravity="center|top"
                             android:layout_marginTop="20dp"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"/>
                         <TextView
                             android:id="@+id/mark_text"
                             android:layout_gravity="center|bottom"
@@ -198,13 +206,27 @@
             </TextView>
 <!--            简介标题控件结束-->
 <!--            简介控件-->
-            <TextView
-                android:id="@+id/item_about_text"
+            <com.google.android.material.card.MaterialCardView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:paddingVertical="10dp">
-            </TextView>
+                app:cardCornerRadius="30dp"
+                android:background="#f0f0f0">
+
+                <TextView
+                    android:id="@+id/item_about_text"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:paddingVertical="10dp">
+                </TextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
 <!--            简介控件结束-->
 
 <!--            图片标题控件-->

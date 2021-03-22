@@ -26,7 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="148ddd47-dded-4341-9112-883c34eacbff">
-        <schema name="main" object-types="view, index, dataset trigger, table, constraint, column" />
+        <schema name="main" object-types="dataset trigger, view, constraint, index, table, column" />
       </connection>
     </loaded-nodes>
   </component>
@@ -36,7 +36,9 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="148ddd47-dded-4341-9112-883c34eacbff" object-ref="schemas/main/tables/Canteen" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="148ddd47-dded-4341-9112-883c34eacbff" />
@@ -85,7 +87,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="/data/data/com.example.hitszhkr1/databases/canteen.db" schema="main" />
+            <file path="D:\canteen.db" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".drawerActivities.SettingActivity"></activity>
+        <activity android:name=".drawerActivities.DeveloperModeActivity"></activity>
+        <activity android:name=".drawerActivities.SettingActivity" />
         <activity
             android:name=".CanteenItemActivity"
             android:theme="@style/TransluctNavigationTheme" />
@@ -17,7 +18,6 @@
         <activity android:name=".drawerActivities.AboutActivity" />
         <activity android:name=".drawerActivities.ContactActivity" />
         <activity android:name=".drawerActivities.HelpActivity" />
-        <activity android:name=".drawerActivities.SettingsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

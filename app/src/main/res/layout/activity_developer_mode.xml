@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".drawerActivities.DeveloperModeActivity">
+
+    <Button
+        android:id="@+id/dev_mode_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete database">
+    </Button>
+
+    <Button
+        android:id="@+id/add_data_to_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add data">
+    </Button>
+
+
+    <Button
+        android:id="@+id/delete_all_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete data">
+    </Button>
+
+</LinearLayout>
