@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:clipToPadding="true"
         android:fitsSystemWindows="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="?attr/actionBarSize">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"

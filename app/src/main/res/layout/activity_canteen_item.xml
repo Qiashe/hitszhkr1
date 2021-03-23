@@ -307,4 +307,16 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_star_single"
+        android:id="@+id/mark_button"
+        app:backgroundTint="#eee"
+        app:layout_anchorGravity="bottom|end">
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
