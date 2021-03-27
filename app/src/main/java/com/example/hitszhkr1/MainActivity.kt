@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import com.amap.api.maps.MapView
 import com.example.hitszhkr1.drawerActivities.*
 import com.google.android.material.internal.NavigationMenuItemView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
         button_draw_out.setBackgroundColor(Color.TRANSPARENT)
         nightmode_button.setBackgroundColor(Color.TRANSPARENT)
         scan_button.setBackgroundColor(Color.TRANSPARENT)
+
+        val mapView =findViewById<MapView>(R.id.map)
+        mapView.onCreate(savedInstanceState)
+        val aMap=mapView.map
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         button_draw_out.setOnClickListener {
