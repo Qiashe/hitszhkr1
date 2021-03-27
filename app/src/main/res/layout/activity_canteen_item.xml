@@ -318,5 +318,4 @@
         app:layout_anchorGravity="bottom|end">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

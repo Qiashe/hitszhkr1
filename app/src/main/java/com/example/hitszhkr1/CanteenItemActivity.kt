@@ -4,7 +4,10 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
+import android.view.*
+import android.widget.Button
+import android.widget.PopupWindow
+import android.widget.RatingBar
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.hitszhkr1.database.DatabaseHelper
@@ -25,6 +28,7 @@ class CanteenItemActivity : AppCompatActivity() {
             "about text)"
     private val dbVersion=1
     private val dbHelper= DatabaseHelper(this,"canteen.db",createIndex,dbVersion)
+    private lateinit var popupWindow:PopupWindow
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -110,6 +114,33 @@ class CanteenItemActivity : AppCompatActivity() {
         Glide.with(this).load(R.drawable.no_image).into(picture_about4)
         Glide.with(this).load(R.drawable.no_image).into(picture_about5)
         Glide.with(this).load(R.drawable.no_image).into(picture_about6)
+
+        val popViewParent= LayoutInflater.from(this).inflate(R.layout.activity_canteen_item,null)
+        val popView= LayoutInflater.from(this,).inflate(R.layout.popup_mark,null)
+        popupWindow=MarkPopupWindow(this,popView,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+        popupWindow.isFocusable=true
+        popupWindow.isTouchable=true
+        popupWindow.animationStyle=R.style.BottomPopupTheme
+
+        var rate = 0.00
+        val contentView=popupWindow.contentView
+        val markSubmitButton=contentView.findViewById<Button>(R.id.mark_submit_button)
+        val rateBar=contentView.findViewById<RatingBar>(R.id.rate_bar_canteen)
+        val markBackButton=contentView.findViewById<Button>(R.id.mark_back_button)
+        mark_button.setOnClickListener {
+            popupWindow.showAtLocation(popViewParent, Gravity.BOTTOM,0,0)
+            rateBar.rating= 0F
+        }
+        markSubmitButton.setOnClickListener {
+            rate = rateBar.rating.toDouble()
+            Toast.makeText(this, "$rate", Toast.LENGTH_SHORT).show()
+            //发送评分至服务器！
+            popupWindow.dismiss()
+        }
+        markBackButton.setOnClickListener {
+            popupWindow.dismiss()
+        }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -121,4 +152,5 @@ class CanteenItemActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }

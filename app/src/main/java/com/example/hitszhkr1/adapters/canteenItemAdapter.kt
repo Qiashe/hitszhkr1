@@ -28,7 +28,6 @@ class canteenItemAdapter(private val context: Context, private val item_list : L
         holder.itemView.setOnClickListener {
             val position=holder.adapterPosition
             val item=item_list[position]
-            Toast.makeText(context, "point", Toast.LENGTH_SHORT).show()
             val intent=Intent(context,CanteenItemActivity::class.java).apply {
                 putExtra("ID",item.ID)
                 putExtra("ImageId",item.imageID)

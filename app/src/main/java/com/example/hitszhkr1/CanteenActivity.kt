@@ -4,11 +4,16 @@ import android.content.ContentValues
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hitszhkr1.adapters.canteenItemAdapter
 import com.example.hitszhkr1.database.DatabaseHelper
 import kotlinx.android.synthetic.main.activity_canteen.*
+import kotlinx.android.synthetic.main.activity_canteen_item.*
 import java.util.ArrayList
 
 class CanteenActivity : AppCompatActivity() {
@@ -60,6 +65,8 @@ class CanteenActivity : AppCompatActivity() {
         val adapter=canteenItemAdapter(this,itemList)
         recycler_canteen.adapter=adapter
 
+
+
     }
 
     private fun initList(){ //初始化卡片列表
@@ -78,10 +85,7 @@ class CanteenActivity : AppCompatActivity() {
     }
 
     private fun createCanteenBook(){ //数据库创建
-        Toast.makeText(this, "trying", Toast.LENGTH_SHORT).show()
             dbHelper.writableDatabase
-        Toast.makeText(this, "tried", Toast.LENGTH_SHORT).show()
-
     }
 
 

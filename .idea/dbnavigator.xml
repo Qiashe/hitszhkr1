@@ -26,7 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="148ddd47-dded-4341-9112-883c34eacbff">
-        <schema name="main" object-types="table, view, column" />
+        <schema name="main" object-types="table, view" />
       </connection>
     </loaded-nodes>
   </component>
@@ -36,9 +36,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="148ddd47-dded-4341-9112-883c34eacbff" object-ref="schemas/main/tables/Canteen" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="148ddd47-dded-4341-9112-883c34eacbff" />
