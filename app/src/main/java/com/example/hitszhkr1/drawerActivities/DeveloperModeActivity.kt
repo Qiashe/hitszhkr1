@@ -16,6 +16,7 @@ class DeveloperModeActivity : AppCompatActivity() {
             "name text," +
             "mark integer," +
             "spice integer," +
+            "sweet integer," +
             "location text," +
             "canteenNum integer," +
             "reviewNum integer," +
@@ -57,12 +58,13 @@ class DeveloperModeActivity : AppCompatActivity() {
                     "使用效果:为选中的角色恢复生命值上限的9%，并额外恢复1000点生命值。\n" +
                     "\n" +
                     "获得方式:成功烹饪野菇鸡肉串;猎鹿人购买;万民堂购买;")
-            put("location","蒙德")
+            put("location","荔园")
             put("canteenNum",1)
             put("mark",1)
             put("reviewNum",233)
             put("price",1.99)
             put("spice",0)
+            put("sweet",0)
             put("imageID",R.drawable.pic_temp_1)
         }
         db.insert("Canteen",null,value1)
@@ -77,12 +79,13 @@ class DeveloperModeActivity : AppCompatActivity() {
                     "使用后为选中的角色恢复900～1500点生命值，无CD时间，熟练满值20，暂无加成角色。\n" +
                     "\n" +
                     "十分推荐制作的即时恢复类料理，恢复数值很高。甜甜花在野外比较常见甚至比蘑菇更多，无论前期、中期还是后期都用处很大。 ")
-            put("location","蒙德")
+            put("location","荔园")
             put("canteenNum",2)
             put("mark",3)
             put("reviewNum",120)
             put("price",3.99)
             put("spice",0)
+            put("sweet",0)
             put("imageID",R.drawable.pic_temp_2)
         }
         db.insert("Canteen",null,value2)
@@ -99,12 +102,13 @@ class DeveloperModeActivity : AppCompatActivity() {
                     "获得方式:完成烹饪蒙德土豆饼\n" +
                     "\n" +
                     "食谱获得:试炼:烈焰与雷电通关获得")
-            put("location","蒙德")
+            put("location","荷园")
             put("canteenNum",4)
             put("mark",3)
             put("reviewNum",319)
             put("price",9.99)
             put("spice",0)
+            put("sweet",0)
             put("imageID",R.drawable.pic_temp_3)
         }
         db.insert("Canteen",null,value3)
@@ -112,24 +116,26 @@ class DeveloperModeActivity : AppCompatActivity() {
             put("name","提瓦特煎蛋")
             put("about","單面煎熟的禽蛋。\n" +
                     "蛋黃一戳就可以流出汁，非常適合解饞。")
-            put("location","提瓦特")
+            put("location","荷园")
             put("canteenNum",3)
             put("mark",1)
             put("reviewNum",23)
             put("price",0.99)
             put("spice",0)
+            put("sweet",0)
             put("imageID",R.drawable.pic_temp_4)
         }
         db.insert("Canteen",null,value4)
         val value5 = ContentValues().apply {
             put("name","北地烟熏鸡")
             put("about","蔬菜搭配熏制好的禽肉。事实证明招待别人前先尝一口是很有必要的，比如现在重做一份还来得及。")
-            put("location","璃月")
+            put("location","燕园")
             put("canteenNum",1)
             put("mark",2)
             put("reviewNum",23)
             put("price",12.99)
             put("spice",1)
+            put("sweet",0)
             put("imageID",R.drawable.pic_temp_5)
         }
         db.insert("Canteen",null,value5)

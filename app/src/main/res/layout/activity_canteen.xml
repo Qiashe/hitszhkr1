@@ -19,33 +19,105 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="120dp"
                 android:background="@color/colorPrimaryDark"
                 app:layout_scrollFlags="scroll|enterAlways|snap">
 
-                <LinearLayout
-                    android:orientation="horizontal"
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageButton
-                        android:id="@+id/button_back"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_back">
-                    </ImageButton>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center|top">
 
-                    <SearchView
-                        android:id="@+id/search2"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="9"
-                        android:queryHint="因为我对这土地爱得深沉"
-                        app:queryHint="因为我对这土地爱得深沉">
-                    </SearchView>
+                        <ImageButton
+                            android:id="@+id/button_back"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_back">
+                        </ImageButton>
 
-                </LinearLayout>
+                        <SearchView
+                            android:id="@+id/search2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:queryHint="因为我对这土地爱得深沉"
+                            app:queryHint="因为我对这土地爱得深沉">
+                        </SearchView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Button
+                                    android:id="@+id/sort_with_location"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="TEXT"
+                                    android:textColor="#000">
+                                </Button>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Button
+                                    android:id="@+id/sort_with_taste"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="TEXT"
+                                    android:textColor="#000">
+                                </Button>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Button
+                                    android:id="@+id/sort_method"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="TEXT"
+                                    android:textColor="#000">
+                                </Button>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
 
             </androidx.appcompat.widget.Toolbar>
 

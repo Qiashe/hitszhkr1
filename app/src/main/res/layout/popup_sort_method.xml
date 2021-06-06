@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="15dp"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/sm1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="推荐排序"
+            android:textColor="#000">
+        </Button>
+        <Button
+            android:id="@+id/sm2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人气优先"
+            android:textColor="#000">
+        </Button>
+        <Button
+            android:id="@+id/sm3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评分优先"
+            android:textColor="#000">
+        </Button>
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

@@ -11,6 +11,7 @@ import android.widget.RatingBar
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.hitszhkr1.database.DatabaseHelper
+import com.example.hitszhkr1.popup.MarkPopupWindow
 import kotlinx.android.synthetic.main.activity_canteen_item.*
 
 class CanteenItemActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class CanteenItemActivity : AppCompatActivity() {
             "name text," +
             "mark integer," +
             "spice integer," +
+            "sweet integer," +
             "location text," +
             "canteenNum integer," +
             "reviewNum integer," +
@@ -117,7 +119,7 @@ class CanteenItemActivity : AppCompatActivity() {
 
         val popViewParent= LayoutInflater.from(this).inflate(R.layout.activity_canteen_item,null)
         val popView= LayoutInflater.from(this,).inflate(R.layout.popup_mark,null)
-        popupWindow=MarkPopupWindow(this,popView,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+        popupWindow= MarkPopupWindow(this,popView,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
         popupWindow.isFocusable=true
         popupWindow.isTouchable=true
         popupWindow.animationStyle=R.style.BottomPopupTheme

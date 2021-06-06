@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="15dp"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/st0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部口味"
+            android:textColor="#000">
+        </Button>
+        <Button
+            android:id="@+id/st1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拒绝辛辣"
+            android:textColor="#000">
+        </Button>
+        <Button
+            android:id="@+id/st2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拒绝甜食"
+            android:textColor="#000">
+        </Button>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
