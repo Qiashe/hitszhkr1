@@ -62,9 +62,6 @@ class CanteenActivity : AppCompatActivity() {
             finish()
         } //顶部导航栏back按钮监听
 
-
-
-
         //ADAPT卡片列表RECYCLERVIEW
         val layoutManager=LinearLayoutManager(this)
         recycler_canteen.layoutManager=layoutManager
@@ -75,19 +72,24 @@ class CanteenActivity : AppCompatActivity() {
         //搜索功能
         search2.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
+                if (test != ""){
+                    val regex = Regex (test)
+                    val tempList= itemList.filter { regex.containsMatchIn(it.name) }
+                    val newAdapter=CanteenItemAdapter(this@CanteenActivity,tempList)
+                    recycler_canteen.adapter=newAdapter
+                    sort_with_location_popup.dismiss()
+                }
                 return false
             }
 
             override fun onQueryTextChange(query: String?): Boolean {
                 //通过首字符筛选内容
                 if (query != null) {
-                    test=query
+                    test = query
                 }
                 return false
             }
         })
-
-        Toast.makeText(this, "$test", Toast.LENGTH_SHORT).show()
 
 
         //弹出窗口初始化
