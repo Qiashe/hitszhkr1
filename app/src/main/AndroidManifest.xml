@@ -16,10 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MorePicturesActivity"></activity>
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="6fafdb7eb11f4522152216c747197edc"/>
-        <activity android:name=".drawerActivities.DeveloperModeActivity"></activity>
+            android:value="6fafdb7eb11f4522152216c747197edc" />
+
+        <activity android:name=".drawerActivities.DeveloperModeActivity" />
         <activity android:name=".drawerActivities.SettingActivity" />
         <activity
             android:name=".CanteenItemActivity"

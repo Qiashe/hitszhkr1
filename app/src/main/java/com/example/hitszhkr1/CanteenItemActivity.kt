@@ -1,6 +1,7 @@
 package com.example.hitszhkr1
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -141,6 +142,15 @@ class CanteenItemActivity : AppCompatActivity() {
         }
         markBackButton.setOnClickListener {
             popupWindow.dismiss()
+        }
+
+        //点击查看更多图片
+        button_see_more.setOnClickListener {
+            //TODO
+            val intent=Intent(this,MorePicturesActivity::class.java).apply {
+                putExtra("ID",idGet)
+            }
+            this.startActivity(intent)
         }
 
     }
