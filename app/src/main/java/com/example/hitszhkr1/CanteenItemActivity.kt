@@ -39,7 +39,6 @@ class CanteenItemActivity : AppCompatActivity() {
         val idGet=intent.getIntExtra("ID",0) //接受ID
 
         val imageGet=intent.getIntExtra("ImageId",0) //Image ID Receiver
-        Toast.makeText(this, "ImageIDis$imageGet", Toast.LENGTH_SHORT).show()
         val db=dbHelper.writableDatabase
         var itemName="Default"
         var itemAbout="Default"

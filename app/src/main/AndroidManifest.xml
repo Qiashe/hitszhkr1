@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,14 +17,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MorePicturesActivity"></activity>
-
+        <activity android:name=".MorePicturesActivity" /> <!-- 高德地图API key配置 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="6fafdb7eb11f4522152216c747197edc" />
 
         <activity android:name=".drawerActivities.DeveloperModeActivity" />
         <activity android:name=".drawerActivities.SettingActivity" />
+        <activity
+            android:name=".FacilityItemActivity"
+            android:theme="@style/TransluctNavigationTheme" />
         <activity
             android:name=".CanteenItemActivity"
             android:theme="@style/TransluctNavigationTheme" />
