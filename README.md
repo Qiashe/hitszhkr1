@@ -1,5 +1,30 @@
-This is a readme file
+# 开发日志
 
-We are sorry to say that the project is not yet began to develop.
+## 待开发项目：
 
-According to the time arrangement,development will begin before 2021.6
+优化UI（请把已优化完UI的界面写在这里）：
+
+
+重构设施/食堂界面切换的代码
+
+设施界面的搜索功能
+
+“设置界面”完善功能
+
+“帮助界面”
+
+“联系我们”界面
+
+深色模式切换
+
+## 不重要的项目
+
+高德地图的导航功能实现
+
+****
+
+## 开发进度：
+
+截止2021.6.26
+
+完成了除与服务器交互、设施页面搜索功能的其他所有功能的基本实现
