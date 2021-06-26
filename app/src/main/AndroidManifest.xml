@@ -30,7 +30,6 @@
         <activity
             android:name=".CanteenItemActivity"
             android:theme="@style/TransluctNavigationTheme" />
-        <activity android:name=".CanteenActivity" />
         <activity android:name=".drawerActivities.AboutActivity" />
         <activity android:name=".drawerActivities.ContactActivity" />
         <activity android:name=".drawerActivities.HelpActivity" />
