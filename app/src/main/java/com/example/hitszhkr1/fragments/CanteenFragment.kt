@@ -1,5 +1,6 @@
 package com.example.hitszhkr1.fragments
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hitszhkr1.CanteenItem
 import com.example.hitszhkr1.R
 import com.example.hitszhkr1.adapters.CanteenItemAdapter
-import com.example.hitszhkr1.database.DatabaseHelper
 import com.example.hitszhkr1.popup.SortPopupWindow
 import kotlinx.android.synthetic.main.fragment_canteen.*
 import java.util.ArrayList
@@ -28,6 +28,7 @@ class CanteenFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_canteen,container,false)
     }
 
+    @SuppressLint("InflateParams")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         //初始化UI样式
@@ -49,9 +50,21 @@ class CanteenFragment : Fragment() {
         val popWindowView1 = LayoutInflater.from(context).inflate(R.layout.popup_sort_location,null)
         val popWindowView2 = LayoutInflater.from(context).inflate(R.layout.popup_sort_taste,null)
         val popWindowView3 = LayoutInflater.from(context).inflate(R.layout.popup_sort_method,null)
-        val popWindow1 = context?.let { SortPopupWindow(it,popWindowView1,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT) }
-        val popWindow2 = context?.let { SortPopupWindow(it,popWindowView2,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT) }
-        val popWindow3 = context?.let { SortPopupWindow(it,popWindowView3,ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT) }
+        val popWindow1 = context?.let { SortPopupWindow(
+            popWindowView1,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        ) }
+        val popWindow2 = context?.let { SortPopupWindow(
+            popWindowView2,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        ) }
+        val popWindow3 = context?.let { SortPopupWindow(
+            popWindowView3,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        ) }
         if (popWindow1 != null) {
             popWindow1.isFocusable = true
         }
@@ -170,7 +183,7 @@ class CanteenFragment : Fragment() {
             sButton2.text = "全部口味"
             sButton3.text = "推荐排序"
             fRecycler.adapter = adapter
-            popWindow3?.dismiss()
+            popWindow3.dismiss()
         }
 
         mSortButton1?.setOnClickListener {
@@ -179,7 +192,7 @@ class CanteenFragment : Fragment() {
             sButton2.text = "全部口味"
             sButton3.text = "人气优先"
             fRecycler.adapter = adapter
-            popWindow3?.dismiss()
+            popWindow3.dismiss()
         }
 
         mSortButton2?.setOnClickListener {
@@ -188,7 +201,7 @@ class CanteenFragment : Fragment() {
             sButton2.text = "全部口味"
             sButton3.text = "评分优先"
             fRecycler.adapter = context?.let { it1 -> CanteenItemAdapter(it1,itemList.sortedByDescending { canteenItem ->  canteenItem.mark}) }
-            popWindow3?.dismiss()
+            popWindow3.dismiss()
         }
     }
 

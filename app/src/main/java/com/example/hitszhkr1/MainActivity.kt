@@ -3,22 +3,20 @@ package com.example.hitszhkr1
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import com.amap.api.maps.CameraUpdateFactory
-import com.amap.api.maps.MapFragment
-import com.amap.api.maps.MapView
-import com.amap.api.maps.model.LatLng
-import com.amap.api.maps.model.MarkerOptions
-import com.amap.api.maps.model.MyLocationStyle
 import com.example.hitszhkr1.drawerActivities.AboutActivity
 import com.example.hitszhkr1.drawerActivities.ContactActivity
 import com.example.hitszhkr1.drawerActivities.HelpActivity
 import com.example.hitszhkr1.drawerActivities.SettingActivity
+import com.example.hitszhkr1.fragments.SearchFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private var nowPage = 1
+    private var searchOn = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,31 +33,48 @@ class MainActivity : AppCompatActivity() {
         transaction.commit()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         button_draw_out.setOnClickListener {
-            mainDrawerLayout.openDrawer(GravityCompat.START)
+            if (searchOn == 1){
+                searchOn = 0
+                if(nowPage == 1){
+                    val fragment1 = com.example.hitszhkr1.fragments.MapFragment()
+                    val fragmentManager1 = supportFragmentManager
+                    val transaction1 = fragmentManager1.beginTransaction()
+                    transaction1.replace(R.id.mainFragmentContainer,fragment1)
+                    transaction1.commit()
+                }else{
+                    val fragment2 = com.example.hitszhkr1.fragments.CanteenFragment()
+                    val fragmentManager2 = supportFragmentManager
+                    val transaction2 = fragmentManager2.beginTransaction()
+                    transaction2.replace(R.id.mainFragmentContainer,fragment2)
+                    transaction2.commit()
+                }
+                button_draw_out.setImageResource(R.drawable.ic_index)
+            }else{
+                mainDrawerLayout.openDrawer(GravityCompat.START)
+            }
         }
 
         //底栏点击事件监听
         bottom_1.setOnNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.homepage -> {
-                    if (bottom_1.selectedItemId != R.id.homepage){
-                        val fragment1 = com.example.hitszhkr1.fragments.MapFragment()
-                        val fragmentManager1 = supportFragmentManager
-                        val transaction1 = fragmentManager1.beginTransaction()
-                        transaction1.replace(R.id.mainFragmentContainer,fragment1)
-                        transaction1.commit()
-                    }
+                    nowPage = 1
+                    val fragment1 = com.example.hitszhkr1.fragments.MapFragment()
+                    val fragmentManager1 = supportFragmentManager
+                    val transaction1 = fragmentManager1.beginTransaction()
+                    transaction1.replace(R.id.mainFragmentContainer,fragment1)
+                    transaction1.commit()
                     true
                 }
                 R.id.canteen -> {
-                    if(bottom_1.selectedItemId != R.id.canteen){
-                        val fragment2 = com.example.hitszhkr1.fragments.CanteenFragment()
-                        val fragmentManager2 = supportFragmentManager
-                        val transaction2 = fragmentManager2.beginTransaction()
-                        transaction2.replace(R.id.mainFragmentContainer,fragment2)
-                        transaction2.commit()
-                    }
+                    nowPage = 2
+                    val fragment2 = com.example.hitszhkr1.fragments.CanteenFragment()
+                    val fragmentManager2 = supportFragmentManager
+                    val transaction2 = fragmentManager2.beginTransaction()
+                    transaction2.replace(R.id.mainFragmentContainer,fragment2)
+                    transaction2.commit()
                     true
                 }
                 else -> {
@@ -100,12 +115,31 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        //搜索栏监听,搜索设施
+        var getText = "text"
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                val fragment0 = SearchFragment()
+                val fragmentManager0 = supportFragmentManager
+                val transaction0 = fragmentManager0.beginTransaction()
+                transaction0.replace(R.id.mainFragmentContainer, fragment0)
+                transaction0.commit()
+                val bundle = Bundle()
+                bundle.putString("text",getText)
+                bundle.putBoolean("listIsFacility",(bottom_1.selectedItemId == R.id.homepage))
+                fragment0.arguments = bundle
+                searchOn = 1
+                button_draw_out.setImageResource(R.drawable.ic_back)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) { getText = newText }
+                return false
+            }
+        })
     }
-//
-//    override fun onStart() {
-//        //设置默认选择homePage
-//        bottom_1.selectedItemId=R.id.homepage
-//        super.onStart()
-//    }
 
 }
+

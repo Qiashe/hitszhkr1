@@ -33,6 +33,7 @@ class CanteenItemActivity : AppCompatActivity() {
     private val dbHelper= DatabaseHelper(this,"canteen.db",createIndex,dbVersion)
     private lateinit var popupWindow:PopupWindow
 
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_canteen_item)
@@ -118,13 +119,17 @@ class CanteenItemActivity : AppCompatActivity() {
         Glide.with(this).load(R.drawable.no_image).into(picture_about6)
 
         val popViewParent= LayoutInflater.from(this).inflate(R.layout.activity_canteen_item,null)
-        val popView= LayoutInflater.from(this,).inflate(R.layout.popup_mark,null)
-        popupWindow= MarkPopupWindow(this,popView,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+        val popView= LayoutInflater.from(this).inflate(R.layout.popup_mark,null)
+        popupWindow= MarkPopupWindow(
+            popView,
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
         popupWindow.isFocusable=true
         popupWindow.isTouchable=true
         popupWindow.animationStyle=R.style.BottomPopupTheme
 
-        var rate = 0.00
+        var rate: Double
         val contentView=popupWindow.contentView
         val markSubmitButton=contentView.findViewById<Button>(R.id.mark_submit_button)
         val rateBar=contentView.findViewById<RatingBar>(R.id.rate_bar_canteen)
@@ -145,13 +150,11 @@ class CanteenItemActivity : AppCompatActivity() {
 
         //点击查看更多图片
         button_see_more.setOnClickListener {
-            //TODO
             val intent=Intent(this,MorePicturesActivity::class.java).apply {
                 putExtra("ID",idGet)
             }
             this.startActivity(intent)
         }
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

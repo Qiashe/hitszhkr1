@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -16,28 +16,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="全部地点"
-            android:textColor="#000">
+            android:textColor="#000"
+            tools:ignore="HardcodedText">
         </Button>
         <Button
             android:id="@+id/sl1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="仅看荔园"
-            android:textColor="#000">
+            android:textColor="#000"
+            tools:ignore="HardcodedText">
         </Button>
         <Button
             android:id="@+id/sl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="仅看荷园"
-            android:textColor="#000">
+            android:textColor="#000"
+            tools:ignore="HardcodedText">
         </Button>
         <Button
             android:id="@+id/sl3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="仅看燕园"
-            android:textColor="#000">
+            android:textColor="#000"
+            tools:ignore="HardcodedText">
         </Button>
 
     </LinearLayout>

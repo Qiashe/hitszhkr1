@@ -1,13 +1,12 @@
 package com.example.hitszhkr1.drawerActivities
 
 import android.content.ContentValues
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hitszhkr1.R
 import com.example.hitszhkr1.database.DatabaseHelper
 import kotlinx.android.synthetic.main.activity_developer_mode.*
-import kotlinx.android.synthetic.main.activity_setting.*
 
 class DeveloperModeActivity : AppCompatActivity() {
 

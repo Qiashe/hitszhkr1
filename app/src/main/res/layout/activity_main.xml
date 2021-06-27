@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainDrawerLayout"
@@ -19,13 +18,6 @@
             android:layout_width="match_parent"
             android:layout_marginBottom="?attr/actionBarSize">
         </FrameLayout>
-
-<!--        <com.amap.api.maps.MapView-->
-<!--            android:id="@+id/map"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_marginBottom="?attr/actionBarSize">-->
-<!--        </com.amap.api.maps.MapView>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,17 +40,20 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:src="@drawable/ic_index">
+                        android:src="@drawable/ic_index"
+                        android:contentDescription="index"
+                        tools:ignore="HardcodedText">
                     </ImageButton>
 
                     <SearchView
-                        android:id="@+id/search1"
+                        android:id="@+id/search"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="9"
                         android:queryHint="因为我对这土地爱得深沉"
                         app:queryHint="因为我对这土地爱得深沉">
                     </SearchView>
+
 
                 </LinearLayout>
 
@@ -77,13 +72,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:text="校园生活管家 开发版本"/>
+                android:layout_marginStart="25dp"
+                android:text="校园生活管家 开发版本"
+                tools:ignore="HardcodedText" />
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:text="本界面功能开发中！！！！！"/>
+            android:layout_marginStart="25dp"
+            android:text="本界面功能开发中！！！！！"
+                tools:ignore="HardcodedText" />
 
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -131,19 +128,21 @@
                 android:id="@+id/nightmode_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:src="@drawable/ic_nightmode"
-                android:layout_marginLeft="20dp"
-                android:scaleType="centerCrop">
+                android:layout_marginStart="20dp"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription">
             </ImageButton>
             <ImageButton
                 android:id="@+id/scan_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:src="@drawable/ic_scan"
-                android:layout_marginRight="20dp"
-                android:scaleType="centerCrop">
+                android:layout_marginEnd="20dp"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription">
             </ImageButton>
 
 

@@ -1,17 +1,15 @@
 package com.example.hitszhkr1
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.amap.api.maps.CameraUpdateFactory
 import com.amap.api.maps.MapView
 import com.amap.api.maps.model.CameraPosition
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.MarkerOptions
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_canteen_item.*
-import kotlinx.android.synthetic.main.activity_canteen_item.toolbar_item
 import kotlinx.android.synthetic.main.activity_facility_item.*
 
 class FacilityItemActivity : AppCompatActivity() {

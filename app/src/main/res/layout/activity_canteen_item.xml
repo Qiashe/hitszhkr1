@@ -29,7 +29,8 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"
-                android:fitsSystemWindows="true">
+                android:fitsSystemWindows="true"
+                tools:ignore="ContentDescription">
             </ImageView>
 
             <androidx.appcompat.widget.Toolbar
@@ -85,7 +86,8 @@
                             android:layout_width="40sp"
                             android:layout_height="40sp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_price">
+                            android:src="@drawable/ic_price"
+                            tools:ignore="ContentDescription">
                         </ImageView>
 
                     </FrameLayout>
@@ -126,7 +128,8 @@
                             android:layout_gravity="center|top"
                             android:layout_marginTop="20dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="15dp"/>
+                            android:layout_height="15dp"
+                            tools:ignore="ContentDescription" />
                         <TextView
                             android:id="@+id/mark_text"
                             android:layout_gravity="center|bottom"
@@ -160,7 +163,8 @@
                             android:layout_gravity="center|bottom"
                             android:layout_marginBottom="20dp"
                             android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_height="20dp"
+                            tools:ignore="ContentDescription" />
                     </FrameLayout>
 <!--                标签控件1结束-->
 
@@ -188,7 +192,8 @@
                             android:layout_gravity="center|bottom"
                             android:layout_marginBottom="20dp"
                             android:layout_width="20dp"
-                            android:layout_height="20dp"/>
+                            android:layout_height="20dp"
+                            tools:ignore="ContentDescription" />
                     </FrameLayout>
 <!--                标签控件2结束-->
 
@@ -250,21 +255,24 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="ContentDescription" />
                 <ImageView
                     android:id="@+id/picture_about2"
                     android:layout_width="0dp"
                     android:scaleType="centerCrop"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="ContentDescription" />
                 <ImageView
                     android:id="@+id/picture_about3"
                     android:layout_width="0dp"
                     android:scaleType="centerCrop"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="ContentDescription" />
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="10dp"
@@ -277,21 +285,24 @@
                     android:scaleType="centerCrop"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="ContentDescription" />
                 <ImageView
                     android:id="@+id/picture_about5"
                     android:layout_width="0dp"
                     android:scaleType="centerCrop"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="ContentDescription" />
                 <ImageView
                     android:id="@+id/picture_about6"
                     android:layout_width="0dp"
                     android:scaleType="centerCrop"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    tools:ignore="ContentDescription" />
             </LinearLayout>
             <Button
                 android:id="@+id/button_see_more"
@@ -299,7 +310,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="查看更多图片"
-                android:textColor="#00bafe">
+                android:textColor="#00bafe"
+                tools:ignore="HardcodedText">
             </Button>
 <!--            图片标题控件结束-->
 

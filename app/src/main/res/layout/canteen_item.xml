@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:paddingHorizontal="10dp"
@@ -18,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
-            android:scaleType="centerCrop">
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription">
         </ImageView>
 
         <FrameLayout
@@ -29,10 +31,10 @@
 
             <TextView
                 android:id="@+id/name_canteen"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|start"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:textSize="18pt">
             </TextView>
 

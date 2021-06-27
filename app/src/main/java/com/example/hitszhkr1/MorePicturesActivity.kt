@@ -1,10 +1,9 @@
 package com.example.hitszhkr1
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hitszhkr1.database.DatabaseHelper
-import kotlinx.android.synthetic.main.activity_canteen_item.*
 import kotlinx.android.synthetic.main.activity_more_pictures.*
 
 class MorePicturesActivity : AppCompatActivity() {

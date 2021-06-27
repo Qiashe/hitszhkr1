@@ -1,12 +1,11 @@
 package com.example.hitszhkr1.drawerActivities
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hitszhkr1.R
 import kotlinx.android.synthetic.main.activity_about.*
-import kotlinx.android.synthetic.main.activity_about.view.*
 
 class AboutActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
