@@ -1,3 +1,5 @@
+bin/
+gen/
 *.iml
 .gradle
 /local.properties
@@ -12,7 +14,7 @@
 /captures
 .externalNativeBuild
 .cxx
+.idea
 .idea/codeStyles/Project.xml
 .idea/misc.xml
-.idea/dbnavigator.xml
 .idea/dbnavigator.xml

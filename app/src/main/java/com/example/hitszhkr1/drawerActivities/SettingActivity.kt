@@ -58,15 +58,6 @@ class SettingActivity : AppCompatActivity() {
             //删除数据库数据
         }
 
-        //第四个组件，开发者模式
-        text_dev_title.text="Developer Mode"
-        text_dev_hint.text=" "
-        dev_button.setBackgroundColor(Color.TRANSPARENT)
-        dev_button.setOnClickListener {
-            Toast.makeText(this, "opening", Toast.LENGTH_SHORT).show()
-            val intent=Intent(this,DeveloperModeActivity::class.java)
-            startActivity(intent)
-        }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){

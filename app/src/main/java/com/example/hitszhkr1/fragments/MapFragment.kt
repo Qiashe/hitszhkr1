@@ -1,5 +1,6 @@
 package com.example.hitszhkr1.fragments
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,15 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.amap.api.maps.CameraUpdateFactory
+import com.amap.api.maps.MapView
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.MarkerOptions
 import com.amap.api.maps.model.MyLocationStyle
-import com.example.hitszhkr1.FacilityItem
-import com.example.hitszhkr1.FacilityItemActivity
+import com.example.hitszhkr1.activity.FacilityItemActivity
 import com.example.hitszhkr1.R
+import com.example.hitszhkr1.database.FacilityDatabaseHelper
+import com.example.hitszhkr1.datafuns.Facility
+import com.example.hitszhkr1.objects.FacilityItem
 import kotlinx.android.synthetic.main.fragment_map.*
 
 class MapFragment : Fragment() {
+
+    private var facilityList = ArrayList<FacilityItem>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,30 +34,20 @@ class MapFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        //初始化地图
-        val mapView = fMap
-        mapView.onCreate(savedInstanceState)
+        //初始化地图控件
+        val mapView: MapView = fMap
         val aMap = mapView.map
-
-        //初始化定位蓝点
+        mapView.onCreate(savedInstanceState)
+        aMap.isMyLocationEnabled = true
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(18F))
         val myLocationStyle = MyLocationStyle()
         myLocationStyle.showMyLocation(true)
-        aMap.isMyLocationEnabled = true
         aMap.myLocationStyle = myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE)
-        aMap.moveCamera(CameraUpdateFactory.zoomTo(18F))
 
-        //绘制Marker
-        val facilityList = ArrayList<FacilityItem>()
-        val item1 = FacilityItem(LatLng(22.587535,113.967211),"荔园体育场",1)
-        val item2 = FacilityItem(LatLng(22.586703,113.968088),"荔园二食堂",2)
-        val item3 = FacilityItem(LatLng(22.5865,113.968855),"荔园一食堂",3)
-        facilityList.add(item1)
-        facilityList.add(item2)
-        facilityList.add(item3)
-
+        //初始化指针列表
         val markerList = ArrayList<MarkerOptions>()
         for (i in facilityList.indices){
-            val item = MarkerOptions().position(facilityList[i].position).title(facilityList[i].name)
+            val item = MarkerOptions().position(facilityList[i].position).title(facilityList[i].title)
             markerList.add(item)
         }
         aMap.addMarkers(markerList,true)
@@ -59,11 +55,39 @@ class MapFragment : Fragment() {
         aMap.setOnInfoWindowClickListener {
             val targetItem = it.title
             for (item in facilityList){
-                if (targetItem == item.name){
-                    val intent = Intent(context,FacilityItemActivity::class.java).putExtra("ID",item.id)
+                if (targetItem == item.title){
+                    val intent = Intent(context, FacilityItemActivity::class.java).putExtra("facilityItemId",item.id)
                     startActivity(intent)
                     break
                 }
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        createMarker()
+    }
+
+    @SuppressLint("Recycle")
+    private fun createMarker(){
+        val dbHelper = context?.let { FacilityDatabaseHelper(it,"Facility.db",1) }
+        val database = dbHelper?.writableDatabase
+        val cursor = database?.query("Facility",null,null,null,null,null,null)
+        if (cursor != null) {
+            if (cursor.moveToFirst()){
+                do {
+                    val positionX = cursor.getDouble(cursor.getColumnIndex("positionX"))
+                    val positionY = cursor.getDouble(cursor.getColumnIndex("positionY"))
+                    val position = LatLng(positionY,positionX)
+                    val facilityItemId = cursor.getInt(cursor.getColumnIndex("facilityItemId"))
+                    val title = cursor.getString(cursor.getColumnIndex("title"))
+                    val info = cursor.getString(cursor.getColumnIndex("info"))
+                    val price = cursor.getDouble(cursor.getColumnIndex("price"))
+                    val time = cursor.getString(cursor.getColumnIndex("time"))
+                    val item = FacilityItem(position,facilityItemId,title,time,price,info)
+                    facilityList.add(item)
+                }while (cursor.moveToNext())
             }
         }
     }

@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">hitszhkr1</string>
     <string name="hello_world">Hello World</string>
+    <string name="url_get_facility_list">http://1.15.152.95:8080/HITadmin/facilityItem/findall</string>
+    <string name="url_get_canteen_list">http://1.15.152.95:8080/HITadmin/canteenItem/findall</string>
+    <string name="url_get_canteen_data">http://1.15.152.95:8080/HITadmin/facilityItem/getAllAvg</string>
+    <string name="url_get_canteen_comment">http://1.15.152.95:8080/HITadmin/comment/findall?CIId=</string>
+    <string name="url_get_canteen_image_list">http://1.15.152.95:8080/HITadmin/canteenItem/findImg?name=</string>
+    <string name="url_post_review">http://1.15.152.95:8080/HITadmin/comment/addComment?</string>
+    <!--    提交评价需要的属性：userId,canteenItemId,content,mark,isLike-->
+    <string name="database_canteenItem_version">1</string>
+    <string name="database_facility_version">1</string>
+    <string name="database_canteen_version">1</string>
 </resources>

@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:background="#fff">
+    android:layout_height="80dp"
+    android:background="#fff"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_gravity="bottom|start"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="15dp"
-        android:text="校园生活管家"
-        android:textColor="#00bafe"
-        android:textSize="35sp"
-        tools:ignore="HardcodedText">
-    </TextView>
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/logo"
+            android:layout_marginStart="25dp"
+            android:layout_gravity="bottom|start">
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:layout_gravity="bottom|start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="HITSZ校园生活管家"
+            android:textColor="#00bafe"
+            android:textSize="25sp"
+            android:textStyle="italic|bold"
+            tools:ignore="HardcodedText">
+        </TextView>
+
+    </LinearLayout>
 
     <View
         android:layout_gravity="bottom"
@@ -26,4 +43,4 @@
     </View>
 
 
-</FrameLayout>
+</LinearLayout>

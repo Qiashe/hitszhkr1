@@ -11,7 +11,6 @@
         android:layout_width="match_parent">
 
 
-<!--        地图控件待解决-->
         <FrameLayout
             android:id="@+id/mainFragmentContainer"
             android:layout_height="match_parent"
@@ -35,23 +34,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageButton
-                        android:id="@+id/button_draw_out"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_index"
-                        android:contentDescription="index"
-                        tools:ignore="HardcodedText">
-                    </ImageButton>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/button_draw_out"
+                            android:layout_gravity="center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:contentDescription="index"
+                            android:src="@drawable/logo"
+                            tools:ignore="HardcodedText">
+                        </de.hdodenhof.circleimageview.CircleImageView>
+
+                    </FrameLayout>
 
                     <SearchView
                         android:id="@+id/search"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="9"
-                        android:queryHint="因为我对这土地爱得深沉"
-                        app:queryHint="因为我对这土地爱得深沉">
+                        android:queryHint="点击搜索菜品或设施">
                     </SearchView>
 
 
@@ -107,46 +110,15 @@
             app:menu="@menu/nav_menu"
             app:headerLayout="@layout/nav_header"
             app:itemHorizontalPadding="30dp"
-            app:itemTextColor="#00bafe"
-            >
+            app:itemIconTint="@color/colorPrimary">
         </com.google.android.material.navigation.NavigationView>
 
-        <View
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="#eee"
-            android:layout_marginBottom="55dp">
-        </View>
-
-        <FrameLayout
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-
-            <ImageButton
-                android:id="@+id/nightmode_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="start"
-                android:src="@drawable/ic_nightmode"
-                android:layout_marginStart="20dp"
-                android:scaleType="centerCrop"
-                tools:ignore="ContentDescription">
-            </ImageButton>
-            <ImageButton
-                android:id="@+id/scan_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_scan"
-                android:layout_marginEnd="20dp"
-                android:scaleType="centerCrop"
-                tools:ignore="ContentDescription">
-            </ImageButton>
-
-
-        </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="Project open source in github">
+        </TextView>
 
     </FrameLayout>
 

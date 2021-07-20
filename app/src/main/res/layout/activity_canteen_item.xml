@@ -4,15 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CanteenItemActivity"
+    android:theme="@style/test"
+    tools:context=".activity.CanteenItemActivity"
     tools:ignore="ExtraText"
     android:fitsSystemWindows="true">
 
-<!--    折叠式标题栏-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/canteenItemLikeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_like" />
+
+
+    <!--    折叠式标题栏-->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_item"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="270dp"
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -20,6 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentScrim="@color/colorPrimary"
+            android:background="@color/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:fitsSystemWindows="true">
 
@@ -50,284 +62,324 @@
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-<!--        套个娃-->
+<!--        纵向线性布局-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginHorizontal="10dp">
 
-<!--            名称&&价格-->
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/name_of_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="35sp"
-                    android:layout_gravity="start">
-                </TextView>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_gravity="end"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/price_icon"
-                            android:layout_width="40sp"
-                            android:layout_height="40sp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_price"
-                            tools:ignore="ContentDescription">
-                        </ImageView>
-
-                    </FrameLayout>
+            <TextView
+                android:id="@+id/canteenItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="概述"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold">
+            </TextView>
 
 
-                    <TextView
-                        android:id="@+id/price_of_item"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="35sp">
-                    </TextView>
-
-                </LinearLayout>
-
-            </FrameLayout>
-
-<!--            评分以及标签控件-->
+<!--            MARK AND REVIEW-->
             <com.google.android.material.card.MaterialCardView
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                app:cardCornerRadius="30dp"
-                android:background="#f0f0f0">
-<!--             套娃-->
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_marginHorizontal="10dp"
+                    android:orientation="vertical">
 
-<!--                    评分控件-->
+
                     <FrameLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="10">
-                        <ImageView
-                            android:id="@+id/star_mark"
-                            android:layout_gravity="center|top"
-                            android:layout_marginTop="20dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="15dp"
-                            tools:ignore="ContentDescription" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
                         <TextView
-                            android:id="@+id/mark_text"
-                            android:layout_gravity="center|bottom"
-                            android:layout_marginBottom="20dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="价格"
+                            android:layout_gravity="start"
+                            tools:ignore="HardcodedText">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/canteenItemPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_gravity="end">
+                        </TextView>
+
                     </FrameLayout>
-<!--                    评分控件结束-->
-
-                    <View
-                        android:layout_width="3dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_height="match_parent"
-                        android:background="#eee">
-                    </View>
-
-<!--                标签控件1-->
                     <FrameLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="10">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
                         <TextView
-                            android:id="@+id/label_text1"
-                            android:layout_gravity="center|top"
-                            android:layout_marginTop="20dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                        <ImageView
-                            android:id="@+id/label_icon1"
-                            android:layout_gravity="center|bottom"
-                            android:layout_marginBottom="20dp"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            tools:ignore="ContentDescription" />
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="位置"
+                            android:layout_gravity="start"
+                            tools:ignore="HardcodedText">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/canteenItemCanteen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_gravity="end">
+                        </TextView>
+
                     </FrameLayout>
-<!--                标签控件1结束-->
 
-                    <View
-                        android:layout_width="3dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_height="match_parent"
-                        android:background="#eee">
-                    </View>
-
-<!--                标签控件2-->
                     <FrameLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="10">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
                         <TextView
-                            android:id="@+id/label_text2"
-                            android:layout_gravity="center|top"
-                            android:layout_marginTop="20dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-                        <ImageView
-                            android:id="@+id/label_icon2"
-                            android:layout_gravity="center|bottom"
-                            android:layout_marginBottom="20dp"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            tools:ignore="ContentDescription" />
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="食堂平均价格"
+                            android:layout_gravity="start"
+                            tools:ignore="HardcodedText">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/canteenItemAvePrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_gravity="end">
+                        </TextView>
+
                     </FrameLayout>
-<!--                标签控件2结束-->
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="食堂平均评分"
+                            android:layout_gravity="start"
+                            tools:ignore="HardcodedText">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/canteenItemAveMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_gravity="end">
+                        </TextView>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="菜品评分"
+                            android:layout_gravity="start"
+                            tools:ignore="HardcodedText">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/canteenItemMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_gravity="end">
+                        </TextView>
+
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="辣度"
+                            android:layout_gravity="start"
+                            tools:ignore="HardcodedText">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/canteenItemSpicyRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_gravity="end">
+                        </TextView>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginVertical="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="甜度"
+                            android:layout_gravity="start"
+                            tools:ignore="HardcodedText">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/canteenItemSweetRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:layout_gravity="end">
+                        </TextView>
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-<!--        悬浮标签控件结束-->
 
-<!--            简介标题控件-->
             <TextView
-                android:id="@+id/item_about_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp">
+                android:text="详情"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold">
             </TextView>
-<!--            简介标题控件结束-->
-<!--            简介控件-->
-            <com.google.android.material.card.MaterialCardView
 
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="30dp"
-                android:background="#f0f0f0">
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp">
 
                 <TextView
-                    android:id="@+id/item_about_text"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
+                    android:id="@+id/canteenItemInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:paddingVertical="10dp">
+                    android:layout_margin="10dp">
                 </TextView>
 
             </com.google.android.material.card.MaterialCardView>
 
-<!--            简介控件结束-->
-
-<!--            图片标题控件-->
             <TextView
-                android:id="@+id/picture_about_title"
-                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp">
+                android:text="评论"
+                android:textSize="25sp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold">
             </TextView>
-<!--            图片标题控件结束-->
-<!--            图片控件-->
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
 
-                <ImageView
-                    android:id="@+id/picture_about1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"
-                    tools:ignore="ContentDescription" />
-                <ImageView
-                    android:id="@+id/picture_about2"
-                    android:layout_width="0dp"
-                    android:scaleType="centerCrop"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"
-                    tools:ignore="ContentDescription" />
-                <ImageView
-                    android:id="@+id/picture_about3"
-                    android:layout_width="0dp"
-                    android:scaleType="centerCrop"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"
-                    tools:ignore="ContentDescription" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
-
-                <ImageView
-                    android:id="@+id/picture_about4"
-                    android:layout_width="0dp"
-                    android:scaleType="centerCrop"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"
-                    tools:ignore="ContentDescription" />
-                <ImageView
-                    android:id="@+id/picture_about5"
-                    android:layout_width="0dp"
-                    android:scaleType="centerCrop"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"
-                    tools:ignore="ContentDescription" />
-                <ImageView
-                    android:id="@+id/picture_about6"
-                    android:layout_width="0dp"
-                    android:scaleType="centerCrop"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_weight="1"
-                    tools:ignore="ContentDescription" />
-            </LinearLayout>
-            <Button
-                android:id="@+id/button_see_more"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="查看更多图片"
-                android:textColor="#00bafe"
-                tools:ignore="HardcodedText">
-            </Button>
-<!--            图片标题控件结束-->
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="10dp">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/commentRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+                    <LinearLayout
+                        android:layout_marginVertical="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/canteenItemLoadReview"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="全部评论"
+                            android:textColor="@color/colorAccent">
+                        </Button>
+
+                        <Button
+                            android:id="@+id/canteenItemLoadPicture"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="全部图片"
+                            android:textColor="@color/colorAccent">
+                        </Button>
+
+                        <Button
+                            android:id="@+id/canteenItemSubmitReview"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="评价菜品"
+                            android:textColor="@color/colorAccent">
+                        </Button>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_star_single"
-        android:id="@+id/mark_button"
-        app:backgroundTint="#eee"
-        app:layout_anchorGravity="bottom|end">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

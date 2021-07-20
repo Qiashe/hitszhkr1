@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/commentUserId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DEFAULT"
+                android:textSize="20sp"
+                android:textStyle="italic|bold">
+            </TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/commentContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DEFAULT"
+            android:textSize="18sp">
+        </TextView>
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>

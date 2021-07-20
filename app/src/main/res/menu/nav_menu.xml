@@ -26,5 +26,17 @@
             android:title="关于软件">
         </item>
 
+        <item
+            android:id="@+id/ic_favor"
+            android:icon="@drawable/ic_like_filled"
+            android:title="我的收藏">
+        </item>
+
+        <item
+            android:id="@+id/ic_night"
+            android:icon="@drawable/ic_nightmode"
+            android:title="主题切换">
+        </item>
+
     </group>
 </menu>
