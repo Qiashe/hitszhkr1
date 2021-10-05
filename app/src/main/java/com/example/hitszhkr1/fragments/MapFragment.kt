@@ -38,6 +38,7 @@ class MapFragment : Fragment() {
         val mapView: MapView = fMap
         val aMap = mapView.map
         mapView.onCreate(savedInstanceState)
+        aMap.uiSettings.isZoomControlsEnabled=false
         aMap.isMyLocationEnabled = true
         aMap.moveCamera(CameraUpdateFactory.zoomTo(18F))
         val myLocationStyle = MyLocationStyle()

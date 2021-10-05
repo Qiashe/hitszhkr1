@@ -21,7 +21,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".drawerActivities.NightModeActivity"></activity>
+        <activity android:name=".drawerActivities.FeedbackActivity"
+            android:theme="@style/Theme.ActivityDialogStyle" >
+        </activity>
+        <activity android:name=".drawerActivities.NightModeActivity" />
         <activity
             android:name=".activity.CommentSubmitActivity"
             android:screenOrientation="portrait"
@@ -50,12 +53,6 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".drawerActivities.AboutActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".drawerActivities.ContactActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".drawerActivities.HelpActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MainActivity"

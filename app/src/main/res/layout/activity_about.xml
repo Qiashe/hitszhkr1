@@ -1,75 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".drawerActivities.AboutActivity"
-    tools:ignore="ExtraText"
-    android:background="#00bafe"
-    android:clipToPadding="true"
-    android:fitsSystemWindows="true">
+    tools:context=".drawerActivities.SettingActivity"
+    android:orientation="vertical">
 
-
-<!--    可折叠式菜单栏-->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar_about"
-        android:layout_width="match_parent"
-        android:layout_height="250dp">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapse_about"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_about"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin">
-            </androidx.appcompat.widget.Toolbar>
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-<!--    可折叠式菜单栏-->
-
-<!--    内容控件-->
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nest_about"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/Linear_about"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_about"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_about"
-                android:layout_width="match_parent"
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="320dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:cardCornerRadius="25dp">
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/logo">
+                    </de.hdodenhof.circleimageview.CircleImageView>
+
+                </FrameLayout>
+
 
                 <TextView
-                    android:id="@+id/text_about"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15pt"
-                    android:layout_margin="10dp">
-                </TextView>
-
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-<!--    内容控件-->
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20sp"
+                    android:text="HITSZ 校园生活管家"/>
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/text_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="20sp">
+        </TextView>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

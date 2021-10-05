@@ -24,17 +24,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="148ddd47-dded-4341-9112-883c34eacbff">
-        <schema name="" object-types="table, view" />
-        <schema name="main" object-types="table, view" />
-      </connection>
-      <connection connection-id="16222ab1-3089-4a30-8a96-8d47f9e45cc1">
-        <schema name="CanteenItem" object-types="table, view" />
-        <schema name="Facility" object-types="table, view" />
-        <schema name="main" object-types="table, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="148ddd47-dded-4341-9112-883c34eacbff">
@@ -43,6 +33,9 @@
     <connection id="16222ab1-3089-4a30-8a96-8d47f9e45cc1">
       <console name="Connection 1" type="STANDARD" schema="main" session="Main" />
     </connection>
+    <connection id="8722ab51-4da0-4d0b-a9bc-f69b4ccd20fd">
+      <console name="Connection 2" type="STANDARD" schema="main" session="Main" />
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
@@ -50,8 +43,10 @@
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="148ddd47-dded-4341-9112-883c34eacbff" />
     <connection id="16222ab1-3089-4a30-8a96-8d47f9e45cc1" />
+    <connection id="8722ab51-4da0-4d0b-a9bc-f69b4ccd20fd" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="8722ab51-4da0-4d0b-a9bc-f69b4ccd20fd" dataset="main.Facility" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="148ddd47-dded-4341-9112-883c34eacbff" dataset="main.Canteen" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="148ddd47-dded-4341-9112-883c34eacbff" dataset=".Facility" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="16222ab1-3089-4a30-8a96-8d47f9e45cc1" dataset="main.Canteen" active-filter-id="EMPTY_FILTER" />
@@ -185,13 +180,100 @@
           <driver-library value="" />
           <driver value="" />
           <url-type value="FILE" />
-          <host value="" />
-          <port value="" />
-          <database value="" />
+          <host value="localhost" />
+          <port value="1234" />
+          <database value="database" />
           <files>
             <file path="C:\Files\Canteen.db" schema="main" />
             <file path="C:\Files\Facility.db" schema="Facility" />
             <file path="C:\Files\CanteenItem.db" schema="CanteenItem" />
+          </files>
+          <type value="NONE" />
+          <user value="" />
+          <deprecated-pwd value="" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="false" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="true" />
+          <environment-type value="default" />
+          <connectivity-timeout value="5" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="8722ab51-4da0-4d0b-a9bc-f69b4ccd20fd" active="true">
+        <database>
+          <name value="Connection 2" />
+          <description value="" />
+          <database-type value="SQLITE" />
+          <config-type value="BASIC" />
+          <database-version value="3.21" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="FILE" />
+          <host value="localhost" />
+          <port value="1234" />
+          <database value="database" />
+          <files>
+            <file path="C:\Users\61440\Desktop\Facility.db" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

@@ -1,58 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".drawerActivities.SettingActivity"
-    android:clipToPadding="true"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar_setting"
-        android:layout_width="match_parent"
-        android:layout_height="250dp">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapse_setting"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_setting"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin">
-            </androidx.appcompat.widget.Toolbar>
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nest_setting"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_setting"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="软件设置"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="3dp">
+            </TextView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-<!--                    设置项一:获取软件更新-->
                     <FrameLayout
                         android:id="@+id/settingItem1"
                         android:layout_width="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="80dp">
+                        android:layout_height="60dp">
 
                         <Button
                             android:id="@+id/update_button"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="60dp"/>
                         <TextView
                             android:id="@+id/text_setting_update_title"
                             android:layout_width="wrap_content"
@@ -71,22 +80,20 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="3dp"
+                            android:layout_height="2dp"
                             android:layout_gravity="bottom"
                             android:background="#eee"/>
                     </FrameLayout>
 
-                    <!--设置项二:反馈BUG-->
                     <FrameLayout
                         android:id="@+id/settingItem2"
                         android:layout_width="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="80dp">
+                        android:layout_height="60dp">
 
                         <Button
                             android:id="@+id/bg_button"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="60dp"/>
                         <TextView
                             android:id="@+id/text_bg_title"
                             android:layout_width="wrap_content"
@@ -105,22 +112,20 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="3dp"
+                            android:layout_height="2dp"
                             android:layout_gravity="bottom"
                             android:background="#eee"/>
                     </FrameLayout>
 
-                    <!--设置项三:清除软件缓存-->
                     <FrameLayout
                         android:id="@+id/settingItem3"
                         android:layout_width="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="80dp">
+                        android:layout_height="60dp">
 
                         <Button
                             android:id="@+id/clear_button"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="60dp"/>
                         <TextView
                             android:id="@+id/text_clear_title"
                             android:layout_width="wrap_content"
@@ -139,49 +144,76 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="3dp"
+                            android:layout_height="2dp"
                             android:layout_gravity="bottom"
                             android:background="#eee"/>
                     </FrameLayout>
 
-                    <!--设置项四:开发模式-->
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="帮助"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="3dp">
+            </TextView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
                     <FrameLayout
                         android:id="@+id/settingItem4"
                         android:layout_width="match_parent"
-                        android:layout_marginHorizontal="10dp"
-                        android:layout_height="80dp">
+                        android:layout_height="60dp">
 
                         <Button
-                            android:id="@+id/dev_button"
+                            android:id="@+id/goto_git"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="60dp"/>
                         <TextView
-                            android:id="@+id/text_dev_title"
+                            android:id="@+id/text_goto_git"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start|center"
                             android:layout_marginStart="20dp"
                             android:textSize="20sp"/>
 
-                        <TextView
-                            android:id="@+id/text_dev_hint"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end|center"
-                            android:layout_marginEnd="20dp"
-                            android:textSize="18sp"/>
-
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="3dp"
+                            android:layout_height="2dp"
                             android:layout_gravity="bottom"
                             android:background="#eee"/>
+
+
                     </FrameLayout>
 
-
+                    <TextView
+                        android:id="@+id/help"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:textSize="20sp">
+                    </TextView>
                 </LinearLayout>
 
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

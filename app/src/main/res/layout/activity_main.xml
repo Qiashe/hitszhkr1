@@ -14,13 +14,12 @@
         <FrameLayout
             android:id="@+id/mainFragmentContainer"
             android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="?attr/actionBarSize">
+            android:layout_width="match_parent">
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:clipToPadding="true"
             android:fitsSystemWindows="true">
 
@@ -64,36 +63,31 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:clipToPadding="true"
-            android:fitsSystemWindows="true"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="bottom">
+            android:fitsSystemWindows="true"
+            android:clipToPadding="true"
+            android:layout_margin="10dp"
+            android:layout_gravity="bottom"
+            app:cardCornerRadius="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:text="校园生活管家 开发版本"
-                tools:ignore="HardcodedText" />
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:text="本界面功能开发中！！！！！"
-                tools:ignore="HardcodedText" />
-
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_1"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:menu="@menu/nav_bottom_menu">
-            </com.google.android.material.bottomnavigation.BottomNavigationView>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:menu="@menu/nav_bottom_menu">
+                </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
 
     </FrameLayout>
 

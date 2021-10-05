@@ -105,16 +105,6 @@ class MainActivity : AppCompatActivity()  {
                     startActivity(Intent(this, SettingActivity::class.java))
                     true
                 }
-                R.id.ic_help -> {
-                    //帮助界面
-                    startActivity(Intent(this, HelpActivity::class.java))
-                    true
-                }
-                R.id.ic_contact -> {
-                    //联系界面
-                    startActivity(Intent(this,ContactActivity::class.java))
-                    true
-                }
                 R.id.ic_about -> {
                     //关于界面
                     startActivity(Intent(this,AboutActivity::class.java))

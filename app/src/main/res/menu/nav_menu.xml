@@ -9,18 +9,6 @@
         </item>
 
         <item
-            android:id="@+id/ic_help"
-            android:icon="@drawable/ic_help"
-            android:title="帮助">
-        </item>
-
-        <item
-            android:id="@+id/ic_contact"
-            android:icon="@drawable/ic_contact"
-            android:title="联系我们">
-        </item>
-
-        <item
             android:id="@+id/ic_about"
             android:icon="@drawable/ic_about"
             android:title="关于软件">
@@ -35,7 +23,7 @@
         <item
             android:id="@+id/ic_night"
             android:icon="@drawable/ic_nightmode"
-            android:title="主题切换">
+            android:title="深色模式">
         </item>
 
     </group>
